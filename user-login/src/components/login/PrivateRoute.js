@@ -5,10 +5,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   return(
     <Route {...rest} 
       render = { props => {
-        if(localStorage.getItem('token')){
+        if(localStorage.getItem('cookies')){
          return <Component {...props} />;
       }
-      return <Redirect to='/' />
+      return <Redirect to='/login' />
     }}
     />
   )
